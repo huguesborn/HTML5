@@ -19,13 +19,17 @@ function createPieChart() {
 	var pieChart = new PieChart( "piechart", 
 		{
 			includeLabels: true, 
-			data: [40, 250, 70],
-			labels: ["11%", "69.6%", "17.4%"],
+			data: [180, 30, 30, 30, 30, 30, 30],
+			labels: ["", "0", "20", "40", "60", "80", "100"],
 			colors: [
-            	["#FFDAB9", "#FFDAB9"],
-            	["#E6E6FA", "#E6E6FA"],
-            	["#E0FFFF", "#E0FFFF"]
-			]
+            	["#ffffff", "#ffffff"], // white
+				["#bbddb3", "#1d8e04"], // green
+        		["#e2f5b4", "#9edd08"], // yellow green
+        		["#fdfbb4", "#faf406"], // yellow
+        		["#fbd4b7", "#f2700f"], // orange
+        		["#f8bdb4", "#ea2507"], // red
+        		["#e2bcbd", "#9e2126"] 
+				]
 		}
 	);
 
@@ -38,29 +42,33 @@ function createPieChart() {
  * If you want to draw the labels separately, you can set
  * includeLabels to false, and call drawLabel() for each
  * pie chart segment.
- *
+ **/
 	for (var i = 0; i < pieChart.labels.length; i++) {
 		pieChart.drawLabel(i);
 	}
- */
+// pieChart.drawLabel(i);
 
 /*
  * If you want to select a segment to highight it, you can
  * call select() for a given segment. Here's a little snippet
  * that animates selecting each segment.
- *
+ **/
 	var segment = 0;
 	function nextSegment() {
 		pieChart.select(segment);
 		segment++;
 		if (segment < pieChart.data.length) {
-			setTimeout(nextSegment, 1000);
+			setTimeout(nextSegment, 100);
 		}
+		
+		
 	}
-	setTimeout(nextSegment, 1000);
- */
+		setTimeout(nextSegment, 100);
+
 
 }
+
+
 </script>
 </head>
 <body>
