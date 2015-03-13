@@ -1,3 +1,5 @@
+
+
 //
 // PieChart
 //
@@ -139,3 +141,7 @@ PieChart.prototype = {
 
 }
 
+jQuery(document).ready(function(){
+
+
+});
